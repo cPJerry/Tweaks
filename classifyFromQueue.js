@@ -5,7 +5,6 @@
 // @include             https://hex.cpanel.net/staff/*
 // @include             https://oct.cpanel.net/staff/*
 // ==/UserScript==
-
 function addClass(type2) {
     var pri = $('[id="'+type2+'"]');
     pri.addClass( "ticketsLink" );
@@ -17,25 +16,17 @@ function addClass(type2) {
         var re3='(<[^>]+>)';	// Tag 2
         var p = new RegExp(re1+re2+re3,["i"]);
         var m = p.exec(tid.html());
-        if (m != null)
-        {
+        if (m != null) {
             var id=m[2];
-            //alert(id);
-            
             var txt = "<a href='javascript:classifyTKT(\""+id+"\");'>Not a defect</a>";
-handler.html(txt);            
-            //$("[id='"+int1+"']").appendTo("#"+type.html());
+            handler.html(txt);            
         } else {
             continue;
         }
     }
 }
 addClass("Closed tickets that require your classification");
-//alert(csrf);
 var script   = document.createElement("script");
 script.type  = "text/javascript";
 script.text  = 'function classifyTKT(id) {    $.post(         "https://staff.cpanel.net/staff/classify_ticket.cgi",        { class_id: "41", ticket_id: id, csrf_token: csrf_token },        function( data ) {            $(\'[id="\'+id+\'"]\' ).hide();        }    );}';               // use this for inline script
-
 document.body.appendChild(script);
-
-
