@@ -6,3 +6,14 @@ The first thing about this page is this page doesn't exist. :)
 Second, feel free to fork this off and submit pull requests!
 
 Third, all of these are at your risk. I use all the scripts on here, but YMMV
+
+Files
+------
+
+classifyFromQueue.js: Adds "Not a defect" links to tickets waiting to be classified from the queue in the handler spot (since we know that)
+
+fb.user.js: Removes the fogbugz section
+
+sticky.user.js: Sticks the main menu on top, integrates very well with the timeclock bar
+
+tweaks.user.js: The core of this page. Allows you to do a multitude of things with the ticket system, specificly reguarding coloring. Docs to come when I have time.
