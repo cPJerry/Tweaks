@@ -12,14 +12,14 @@
 // @include             https://oct.cpanel.net/staff/index.cgi*
 // ==/UserScript==
 // COLORS
-var hackedColor = "purple";
-var LikeColor = "brown";
-var UColor = "#FF0000";
-var AColor = "#FF6600";
-var NULUColor = "#66FF99";
-var NULAColor = "#3399FF";
-var myColor = "#FF0000";
-var DislikeColor = "gray";
+var hacked_ticket_color = "purple";
+var like_ticket_color = "brown";
+var unassigned_color = "#FF0000";
+var assigned_color = "#FF6600";
+var not_your_level_unassigned_ticket_color = "#66FF99";
+var not_your_level_assigned_ticket_color = "#3399FF";
+var my_ticket_color = "#FF0000";
+var dislike_ticket_color = "gray";
 
 // Init Arrays
 var likes = [];
@@ -86,7 +86,7 @@ function initScript() {
 
 
     setColors('Enterprise Priority',null,canDoEP,null);
-    setColors('My Tickets',myColor,1,1);
+    setColors('My Tickets',my_ticket_color,1,1);
     setColors('Complimentary',null,canDoComp,null);
     setColors('Standard',null,canDoStd,null);
     setColors('Priority',null,canDoPri,null);
@@ -156,13 +156,13 @@ function setColors(type2,color,canDo,mine) {
                         if (color != null) {
                             setBG(pri,i,color);
                         } else {
-                            setBG(pri,i,UColor);
+                            setBG(pri,i,unassigned_color);
                         }
                     } else { 
                         if (color != null) {
                             setBG(pri,i,color);
                         } else {
-                            setBG(pri,i,AColor);
+                            setBG(pri,i,assigned_color);
                         }
                     }
                 } else {
@@ -170,24 +170,24 @@ function setColors(type2,color,canDo,mine) {
                         if (color != null) {
                             setBG(pri,i,color);
                         } else {
-                            setBG(pri,i,NULUColor);
+                            setBG(pri,i,not_your_level_unassigned_ticket_color);
                         }
                     } else {
                         if (color != null) {
                             setBG(pri,i,color);
                         } else {
-                            setBG(pri,i,NULAColor);
+                            setBG(pri,i,not_your_level_assigned_ticket_color);
                         }
                     }
                 }
                 if (isHackedTicket(subject.html())) {
-                    setBoxBG(pri,i,hackedColor,1);
+                    setBoxBG(pri,i,hacked_ticket_color,1);
                 }
                 if (shouldLikeTicket(subject.html())) {
-                    setBoxBG(pri,i,LikeColor,1);
+                    setBoxBG(pri,i,like_ticket_color,1);
                 }
                 if (shouldDislikeTicket(subject.html())) {
-                    setBoxBG(pri,i,DislikeColor,1);
+                    setBoxBG(pri,i,dislike_ticket_color,1);
                 }
             } else {
                 setBG(pri,i,"silver");
