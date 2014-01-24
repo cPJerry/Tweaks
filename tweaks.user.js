@@ -13,24 +13,23 @@
 // ==/UserScript==
 // COLORS
 var hacked_ticket_color = "purple";
+// You are unable to define what is a hacked ticket. If you really want to, inspect my code
+
 var like_ticket_color = "brown";
+var likes = [];
+// Define liked tickets as below
+likes[0] = '<div class="smile">';
+
+var dislike_ticket_color = "gray";
+// Define disliked tickets as below
+var dislike = [];
+dislike[0] = "tomcat";
+
 var unassigned_color = "#FF0000";
 var assigned_color = "#FF6600";
 var not_your_level_unassigned_ticket_color = "#66FF99";
 var not_your_level_assigned_ticket_color = "#3399FF";
 var my_ticket_color = "#FF0000";
-var dislike_ticket_color = "gray";
-
-// Init Arrays
-var likes = [];
-var dislike = [];
-
-// Dislikes
-dislike[0] = "tomcat";
-
-// Likes
-likes[0] = "php";
-likes[1] = '<div class="smile">';
 
 // Can Do Vars
 var canDoComp = 1;
@@ -55,6 +54,10 @@ var changeColor = 1;
 
 // Whats your Level
 var myLevel = 1;
+
+/******************************************\
+|      STOP HERE OR I CANNOT HELP YOU      |
+\******************************************/
 
 function addQueue(str) {
     var text = '<div class="queue_priority_titles">	<b>'+str+'</b></div><table id="'+str+'" style="display:visible" width="100%" cellspacing="1" cellpadding="2" class="sortable table-bordered table">	<tr width=100%>		<th class="header" width=5%>Id</th>		<th class="header" width=2%>L</th>		<th class="header" width=22%>Client</th>		<th class="header" width=41%>Subject</th>		<th class="header" width=8%>Handler</th>		<th class="header" width=5%>Type</th>		<th class="header" width=5%>Version</th>		<th class="header" width=5%>Updated</th>		<th class="header" width=5%>Duration</th>	</tr></table>';
