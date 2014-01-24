@@ -17,3 +17,5 @@ fb.user.js: Removes the fogbugz section
 sticky.user.js: Sticks the main menu on top, integrates very well with the timeclock bar
 
 tweaks.user.js: The core of this page. Allows you to do a multitude of things with the ticket system, specificly reguarding coloring. Docs to come when I have time.
+
+SmallerPachaNotes.js: Decreases the size of Pacha notes to make the ticket just a tad bit shorter. Credit: David Nielson
