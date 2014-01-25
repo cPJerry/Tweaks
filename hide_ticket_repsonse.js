@@ -10,10 +10,10 @@ $('.pacha_note_container').children('.internal_note_container').children('span')
 	$(this).attr('style','float: left; width: 100%; word-wrap: break-word; ');
 });
 */
-$('.transactions_container').children('table').children('tbody').children('tr').children('.customer_response_container').parent().parent().click(function() {
-	$(this).children('tr').children('.customer_response_container').toggle();
+$('.transactions_container').children('table').children('tbody').children('tr').children('.customer_response_container').parent().parent().children('.stblheader2').click(function() {
+	$(this).parent().children('tr').children('.customer_response_container').toggle();
 });
 
-$('.transactions_container').children('table').children('tbody').children('tr').children('.employee_response_container').parent().parent().click(function() {
-	$(this).children('tr').children('.employee_response_container').toggle();
+$('.transactions_container').children('table').children('tbody').children('tr').children('.employee_response_container').parent().parent().children('.stblheader2').click(function() {
+	$(this).parent().children('tr').children('.employee_response_container').toggle();
 });
