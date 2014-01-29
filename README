@@ -1,6 +1,13 @@
 Welcome to my humble space
 ==========================
 
+INSTALL
+------
+If you are using Chrome and Tampermonkey, you can simply click on a script, and select "Raw" to install it
+If you are not, you will need to copy and paste the script into the greasemonkey (or equivalent) software
+
+---
+
 The first thing about this page is this page doesn't exist. :)
 
 Second, feel free to fork this off and submit pull requests!
