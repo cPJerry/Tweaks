@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                Ticket System Tweaks
-// @version             3.0.2
+// @version             3.0.3
 // @updateurl		https://github.com/cPJerry/Tweaks/raw/master/fb.user.js
 // @description         Simple Tweaks for Ticket System
 // @include             https://staff.cpanel.net/staff/
@@ -27,6 +27,8 @@ var canDoComp = 1;
 var canDoStd  =1;
 var canDoPri = 1;
 var canDoEP = 1;
+
+var name_in_handler = "Jerald.johnson";
 
 // Ticket Queues
 var bugReports = true;
@@ -132,7 +134,7 @@ function setColors(type2,color,canDo,mine) {
         } else {
             if (isATicket(type.html())) {
                 
-                if (isMyLevel(lvl.html(),type2) || handler.html() == 'Jerald.johnson') { // LOL whoops? TODO
+                if (isMyLevel(lvl.html(),type2) || handler.html() == name_in_handler) { 
                     
                     if (handler.css('background-color') == "rgb(221, 221, 221)") {
                         if (color != null) {
