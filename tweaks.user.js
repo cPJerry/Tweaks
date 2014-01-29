@@ -28,7 +28,7 @@ var canDoStd  =1;
 var canDoPri = 1;
 var canDoEP = 1;
 
-var name_in_handler = "Jerald.johnson";
+var name_in_handler = "Insert your username as shown in the handler section";
 
 // Ticket Queues
 var bugReports = true;
