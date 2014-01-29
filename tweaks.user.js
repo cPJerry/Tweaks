@@ -15,16 +15,6 @@
 var hacked_ticket_color = "purple";
 // You are unable to define what is a hacked ticket. If you really want to, inspect my code
 
-var like_ticket_color = "brown";
-var likes = [];
-// Define liked tickets as below
-likes[0] = '<div class="smile">';
-
-var dislike_ticket_color = "gray";
-// Define disliked tickets as below
-var dislike = [];
-dislike[0] = "tomcat";
-
 var unassigned_color = "#FF0000";
 var assigned_color = "#FF6600";
 var not_your_level_unassigned_ticket_color = "#66FF99";
@@ -63,18 +53,6 @@ function addQueue(str) {
     var text = '<div class="queue_priority_titles">	<b>'+str+'</b></div><table id="'+str+'" style="display:visible" width="100%" cellspacing="1" cellpadding="2" class="sortable table-bordered table">	<tr width=100%>		<th class="header" width=5%>Id</th>		<th class="header" width=2%>L</th>		<th class="header" width=22%>Client</th>		<th class="header" width=41%>Subject</th>		<th class="header" width=8%>Handler</th>		<th class="header" width=5%>Type</th>		<th class="header" width=5%>Version</th>		<th class="header" width=5%>Updated</th>		<th class="header" width=5%>Duration</th>	</tr></table>';
     var el= "Complimentary";
     $('[id="'+el+'"]').after(text);
-}
-function shouldLikeTicket(str) {
-    for (var i = 0; i < likes.length; i++) {
-        if (str.toLowerCase().indexOf(likes[i]) >= 0) {return true;}
-    }
-    return false;
-}
-function shouldDislikeTicket(str) {
-    for (var i = 0; i < dislike.length; i++) {
-        if (str.toLowerCase().indexOf(dislike[i]) >= 0) {return true;}
-    }
-    return false;
 }
 function isHackedTicket(str) {
     if (str.toLowerCase().indexOf("hack") >= 0) {return true;}
@@ -153,7 +131,7 @@ function setColors(type2,color,canDo,mine) {
         } else {
             if (isATicket(type.html())) {
                 
-                if (isMyLevel(lvl.html(),type2) || handler.html() == 'Jerald.johnson') {
+                if (isMyLevel(lvl.html(),type2) || handler.html() == 'Jerald.johnson') { // LOL whoops? TODO
                     
                     if (handler.css('background-color') == "rgb(221, 221, 221)") {
                         if (color != null) {
@@ -185,12 +163,6 @@ function setColors(type2,color,canDo,mine) {
                 }
                 if (isHackedTicket(subject.html())) {
                     setBoxBG(pri,i,hacked_ticket_color,1);
-                }
-                if (shouldLikeTicket(subject.html())) {
-                    setBoxBG(pri,i,like_ticket_color,1);
-                }
-                if (shouldDislikeTicket(subject.html())) {
-                    setBoxBG(pri,i,dislike_ticket_color,1);
                 }
             } else {
                 setBG(pri,i,"silver");
