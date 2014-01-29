@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                Ticket System Tweaks
-// @version             3.0.3
+// @version             3.0.4
 // @updateurl		https://github.com/cPJerry/Tweaks/raw/master/fb.user.js
 // @description         Simple Tweaks for Ticket System
 // @include             https://staff.cpanel.net/staff/
