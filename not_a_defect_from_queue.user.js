@@ -1,4 +1,6 @@
 // ==UserScript==
+// @version		1.0.0.1
+// @updateurl		https://github.com/cPJerry/Tweaks/raw/master/not_a_defect_from_queue.user.js
 // @name                Ticket Classify
 // @include             https://staff.cpanel.net/staff/
 // @include             https://staff.cpanel.net/staff/index.cgi*

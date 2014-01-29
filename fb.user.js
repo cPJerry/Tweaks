@@ -1,5 +1,7 @@
 // ==UserScript==
 // @name       Remove FOGBUGZ
+// @version		1.0.0.1
+// @updateurl		https://github.com/cPJerry/Tweaks/raw/master/fb.user.js
 // @include             https://staff.cpanel.net/staff/
 // @include             https://staff.cpanel.net/staff/index.cgi*
 // @include             https://dec.cpanel.net/staff/

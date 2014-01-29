@@ -1,4 +1,6 @@
 // ==UserScript==
+// @version		1.0.0.1
+// @updateurl		https://github.com/cPJerry/Tweaks/raw/master/sticky.user.js
 // @name                Sticky Header
 // @include             https://staff.cpanel.net/staff/*
 // @include             https://dec.cpanel.net/staff/*
