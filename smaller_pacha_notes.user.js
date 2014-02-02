@@ -1,5 +1,5 @@
 // ==UserScript==
-// @version		1.0.0.1
+// @version		1.0.0.2
 // @updateurl		https://github.com/cPJerry/Tweaks/raw/master/smaller_pacha_notes.user.js
 // @name                Small Pacha Notes
 // @include             https://staff.cpanel.net/staff/msg.new.cgi?*
