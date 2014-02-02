@@ -10,6 +10,4 @@
 $('.pacha_note_container').children('.internal_note_container').children('span').each(function() {
 	$(this).attr('style','float: left; width: 100%; word-wrap: break-word; ');
 });
-$('.internal_note_container').children('span').each(function() {
-    $(this).attr('style','white-space: pre-wrap; ');
-});
+
