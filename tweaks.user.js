@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                Ticket System Tweaks
-// @version             3.0.4
+// @version             3.0.5
 // @updateurl		https://github.com/cPJerry/Tweaks/raw/master/fb.user.js
 // @description         Simple Tweaks for Ticket System
 // @include             https://staff.cpanel.net/staff/
@@ -80,7 +80,7 @@ function initScript() {
 function isMyLevel(level,queue) {
     
     if (myLevel == "1") {
-        if (queue == "Enterprise Priority") {
+        if (queue == "Enterprise Priority" && canDoEP) {
             return (level == "1" || level == "2");
         } else {
             return(level == "1");
