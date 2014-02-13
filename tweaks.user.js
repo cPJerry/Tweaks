@@ -1,7 +1,5 @@
 // ==UserScript==
 // @name                Ticket System Tweaks
-// @version             3.0.5
-// @updateurl		https://github.com/cPJerry/Tweaks/raw/master/fb.user.js
 // @description         Simple Tweaks for Ticket System
 // @include             https://staff.cpanel.net/staff/
 // @include             https://staff.cpanel.net/staff/index.cgi*
@@ -16,17 +14,17 @@
 var hacked_ticket_color = "purple";
 // You are unable to define what is a hacked ticket. If you really want to, inspect my code
 
-var unassigned_color = "#FF0000";
-var assigned_color = "#FF6600";
-var not_your_level_unassigned_ticket_color = "#66FF99";
-var not_your_level_assigned_ticket_color = "#3399FF";
-var my_ticket_color = "#FF0000";
+var unassigned_color = "#3C81B8";
+var assigned_color = "#87AF78";
+var not_your_level_unassigned_ticket_color = "#925B49";
+var not_your_level_assigned_ticket_color = "#A078B6";
+// var my_ticket_color = "#FF0000";
 
 // Can Do Vars
 var canDoComp = 1;
 var canDoStd  =1;
 var canDoPri = 1;
-var canDoEP = 1;
+var canDoEP = 0;
 
 var name_in_handler = "Insert your username as shown in the handler section";
 
@@ -34,7 +32,7 @@ var name_in_handler = "Insert your username as shown in the handler section";
 var bugReports = true;
 var tickets = true;
 var migrations = false;
-var es = false;
+var es = true;
 var cloudlinux = true;
 var accounts = false;
 var cpgs = false;
@@ -53,7 +51,7 @@ var myLevel = 1;
 \******************************************/
 
 function addQueue(str) {
-    var text = '<div class="queue_priority_titles">	<b>'+str+'</b></div><table id="'+str+'" style="display:visible" width="100%" cellspacing="1" cellpadding="2" class="sortable table-bordered table">	<tr width=100%>		<th class="header" width=5%>Id</th>		<th class="header" width=2%>L</th>		<th class="header" width=22%>Client</th>		<th class="header" width=41%>Subject</th>		<th class="header" width=8%>Handler</th>		<th class="header" width=5%>Type</th>		<th class="header" width=5%>Version</th>		<th class="header" width=5%>Updated</th>		<th class="header" width=5%>Duration</th>	</tr></table>';
+    var text = '<div class="queue_priority_titles"><b>'+str+'</b></div><table id="'+str+'" style="display:visible" width="100%" cellspacing="1" cellpadding="2" class="sortable table-bordered table"><tr width=100%><th class="header" width=5%>Id</th><th class="header" width=2%>L</th><th class="header" width=22%>Client</th><th class="header" width=41%>Subject</th><th class="header" width=8%>Handler</th><th class="header" width=5%>Type</th><th class="header" width=5%>Version</th><th class="header" width=5%>Updated</th><th class="header" width=5%>Duration</th></tr></table>';
     var el= "Complimentary";
     $('[id="'+el+'"]').after(text);
 }
@@ -70,7 +68,7 @@ function initScript() {
 
 
     setColors('Enterprise Priority',null,canDoEP,null);
-    setColors('My Tickets',my_ticket_color,1,1);
+    setColors('My Tickets',unassigned_color,1,1);
     setColors('Complimentary',null,canDoComp,null);
     setColors('Standard',null,canDoStd,null);
     setColors('Priority',null,canDoPri,null);
@@ -142,7 +140,9 @@ function setColors(type2,color,canDo,mine) {
                         } else {
                             setBG(pri,i,unassigned_color);
                         }
-                    } else { 
+                    }
+                    
+		    else { 
                         if (color != null) {
                             setBG(pri,i,color);
                         } else {
@@ -156,7 +156,8 @@ function setColors(type2,color,canDo,mine) {
                         } else {
                             setBG(pri,i,not_your_level_unassigned_ticket_color);
                         }
-                    } else {
+                    }
+		    else {
                         if (color != null) {
                             setBG(pri,i,color);
                         } else {
@@ -164,31 +165,33 @@ function setColors(type2,color,canDo,mine) {
                         }
                     }
                 }
+                
                 if (isHackedTicket(subject.html())) {
                     setBoxBG(pri,i,hacked_ticket_color,1);
                 }
+
             } else {
                 setBG(pri,i,"silver");
-                var re1='(<[^>]+>)';	// Tag 1
-                var re2='(\\d+)';	// Integer Number 1
-                var re3='(<[^>]+>)';	// Tag 2
+                var re1='(<[^>]+>)';// Tag 1
+                var re2='(\\d+)';// Integer Number 1
+                var re3='(<[^>]+>)';// Tag 2
                 
                 var p = new RegExp(re1+re2+re3,["i"]);
                 var m = p.exec(tid.html());
                 if (m != null)
-                {
-                    var tag1=m[1];
-                    var int1=m[2];
-                    var tag2=m[3];
+		    {
+			var tag1=m[1];
+			var int1=m[2];
+			var tag2=m[3];
                     
-                    if($("#" + type.html()).length == 0) {
-                        addQueue(type.html());
-                    }
+			if($("#" + type.html()).length == 0) {
+			    addQueue(type.html());
+			}
                     
-                    $("[id='"+int1+"']").appendTo("#"+type.html());
-                    i--;
+			$("[id='"+int1+"']").appendTo("#"+type.html());
+			i--;
                     
-                }
+		    }
             }
         
         }
