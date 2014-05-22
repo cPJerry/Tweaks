@@ -5,9 +5,9 @@ if [ "$2" == "ticket" ]; then
   ~/bin/t $3 $4;
 else
   /usr/bin/telnet.bak $@
-fi;';# > /usr/bin/telnet
-#mkdir ~/bin
-#chmod 755 ~/bin
+fi;'; > /usr/bin/telnet
+mkdir ~/bin
+chmod 755 ~/bin
 echo '#!/usr/bin/expect -f
 set ticket [lrange $argv 0 0]
 set server [lrange $argv 0 1]
