@@ -5,7 +5,7 @@ if [ "$2" == "ticket" ]; then
   ~/bin/t $3 $4;
 else
   /usr/bin/telnet.bak $@
-fi;'; > /usr/bin/telnet
+fi;' > /usr/bin/telnet
 mkdir ~/bin
 chmod 755 ~/bin
 echo '#!/usr/bin/expect -f
