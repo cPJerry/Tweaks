@@ -1,0 +1,30 @@
+#!/bin/bash
+sudo mv /usr/bin/telnet /usr/bin/telnet.bak
+sudo echo '#!/bin/bash
+if [ "$2" == "ticket" ]; then
+  ~/bin/t $3 $4;
+else
+  /usr/bin/telnet.bak $@
+fi;';# > /usr/bin/telnet
+#mkdir ~/bin
+#chmod 755 ~/bin
+echo '#!/usr/bin/expect -f
+set ticket [lrange $argv 0 0]
+set server [lrange $argv 0 1]
+set timeout -1
+spawn ssh jerald.johnson@pacha.cpanel.net
+match_max 100000
+expect "*jerald.johnson@pacha*"
+send -- "ticket --nossp $ticket $server\r"
+# Feel free to remove -nossp, my script runs ESP then SSP
+expect "*going interactive*"
+send -- "screen 2> /dev/null || (chmod 1755 /var/run/screen 2> /dev/null && screen 2> /dev/null) || (chmod 1777 /var/run/screen 2> /dev/null && screen 2> /dev/null) || echo \"Could not execute screen. :(\"\r"
+#Also feel free to remove this, this makes all attempts to enter a screen session
+send -- "source /dev/stdin <<< \"\$(curl -sL https://raw.githubusercontent.com/cPanelTechs/ESP/master/esp)\"\r"
+#Again, feel free to remove if you dont want ESP
+send -- "export PS1=\$PS1\"\\n> \"\r"
+# If you use ESP, keep this in place to resolve a current known bug with viewing your history with the up/down arrows
+send -- "ssp\r"
+# Remove if desired
+interact' > ~/bin/t
+chmod 755 ~/bin/t
