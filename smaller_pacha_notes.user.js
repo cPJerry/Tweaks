@@ -17,7 +17,3 @@ if ($('#hacked-banner').css('display') != "none") {
 $('.pacha_note_container').children('.internal_note_container').children('span').each(function() {
     $(this).attr('style','float: left; width: 100%; word-wrap: break-word; ');
 });
-function stuff() {
-    $('[name="whmlogin"]').each(function() {
-        alert($(this).parent().attr('id'));
-    })
