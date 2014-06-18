@@ -21,28 +21,3 @@ function stuff() {
     $('[name="whmlogin"]').each(function() {
         alert($(this).parent().attr('id'));
     })
-}
-//
-function test() { alert(123);}
-// alert($(this).parent().attr('id'));
-var func = "\
-$('[name=\"whmlogin\"]').each(function() {\
-  var divID = $(this).parent().attr('id');\
-  if (divID != 'server_{{server_num}}') {\
-    var id = divID.replace('server_','');\
-    var id2 = 'cpwhm_info_'+id;\
-    var tid = null;\
-    $('#'+id2).children().each(function() {\
-      if ($(this).attr('name') == 'ticket_id') {\
-        tid = $(this).attr('value');\
-      }\
-    });\
-    $('#'+id2).find('td span a').each(function() {\
-      if ($(this).html() == 'SSH') {\
-        $(this).attr('href','telnet://ticket@'+tid+':'+id);\
-      };\
-    });\
-  };\
-});";
-
-setTimeout(func,5000);
