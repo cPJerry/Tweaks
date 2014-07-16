@@ -35,11 +35,18 @@ function isOnline(user) {
 function magic(type2) {
     var pri = $('[id="'+type2+'"]');
     pri.addClass( "ticketsLink" );
-    for (var i=2;i<$('[id="'+type2+'"] tr').length+1;i++) {
-        var status = " (Offline)";
-        if (isOnline(getHandler(pri.find('tr:nth-child('+i+') td:nth-child(3)').html(),type2))) {
-            status = " (Online)";
+    for (var i=0;i<$('[id="'+type2+'"] tr').length+1;i++) {
+        
+        if (pri.find('tr:nth-child('+i+') td:nth-child(2)').html() == null) {
+            pri.find('tr:nth-child('+i+') th:nth-child(2)').html("Handler");
+            pri.find('tr:nth-child('+i+') th:nth-child(2)').css
         }
+        var status = "<br />(Offline)";
+        if (isOnline(getHandler(pri.find('tr:nth-child('+i+') td:nth-child(3)').html(),type2))) {
+            status = "<br />(Online)";
+        }
+        pri.find('tr:nth-child('+i+') td:nth-child(2)').css
+        ('width','100px');
         pri.find('tr:nth-child('+i+') td:nth-child(2)').html(getHandler(pri.find('tr:nth-child('+i+') td:nth-child(3)').html(),type2)+status);
         pri.find('tr:nth-child('+i+') td:nth-child(3)').html(getQueue(pri.find('tr:nth-child('+i+') td:nth-child(3)').html()));
         if (getQueue(pri.find('tr:nth-child('+i+') td:nth-child(3)').html()) == "Bugs" || getQueue(pri.find('tr:nth-child('+i+') td:nth-child(3)').html()) == "Level 2 Support") pri.find('tr:nth-child('+i+')').hide();
