@@ -49,7 +49,8 @@ function magic(type2) {
         ('width','100px');
         pri.find('tr:nth-child('+i+') td:nth-child(2)').html(getHandler(pri.find('tr:nth-child('+i+') td:nth-child(3)').html(),type2)+status);
         pri.find('tr:nth-child('+i+') td:nth-child(3)').html(getQueue(pri.find('tr:nth-child('+i+') td:nth-child(3)').html()));
-        if (getQueue(pri.find('tr:nth-child('+i+') td:nth-child(3)').html()) == "Bugs" || getQueue(pri.find('tr:nth-child('+i+') td:nth-child(3)').html()) == "Level 2 Support") pri.find('tr:nth-child('+i+')').hide();
+//        if (getQueue(pri.find('tr:nth-child('+i+') td:nth-child(3)').html()) == "Bugs" || getQueue(pri.find('tr:nth-child('+i+') td:nth-child(3)').html()) == "Level 2 Support") pri.find('tr:nth-child('+i+')').hide();
+// If you wish to hide queues, uncomment and edit this line above.
     }
     
 }
