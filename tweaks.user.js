@@ -9,6 +9,13 @@
 // @include             https://hex.cpanel.net/staff/index.cgi*
 // @include             https://oct.cpanel.net/staff/
 // @include             https://oct.cpanel.net/staff/index.cgi*
+// The ones above are for SSL validation reasons. Add them to your hosts file
+// @include             https://dec.tickets.cpanel.net/staff/
+// @include             https://dec.tickets.cpanel.net/staff/index.cgi*
+// @include             https://hex.tickets.cpanel.net/staff/
+// @include             https://hex.tickets.cpanel.net/staff/index.cgi*
+// @include             https://oct.tickets.cpanel.net/staff/
+// @include             https://oct.tickets.cpanel.net/staff/index.cgi*
 // ==/UserScript==
 // COLORS
 var hacked_ticket_color = "purple";
