@@ -46,6 +46,7 @@ var cpgs = false;
 var cs = false;
 var sales = false;
 var wintkt = false;
+var lsws = true;
 
 // Do you want to change all the colors?
 var changeColor = 1;
@@ -109,6 +110,8 @@ function isATicket(str) {
     if (str == "cs") { return cs;}
     if (str == "sales") { return sales;}
     if (str == "wintickets") { return wintkt;}
+    if (str == "lsws") {return lsws;}
+
     return false;
 }
 var data = '';
