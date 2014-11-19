@@ -54,4 +54,4 @@ function str_replace(search, replace, subject, count) {
   }
   return sa ? s : s[0];
 }
-$(".ticketattachmentcontainer a").each(function() { var link = $(this).attr('href'); var link2 = str_replace("?action=","",link); if (link == link2) { link = str_replace("../dl.php","http://127.0.0.1/members/dl.php",link); $(this).attr('href',link); }});
+$(".ticketattachmentcontainer a").each(function() { var link = $(this).attr('href'); var link2 = str_replace("?action=","",link); if (link == link2) { link = str_replace("../dl.php","http://127.0.0.1/members/dl.php",link); $(this).attr('href',link); $(this).attr('target','new'); }});
