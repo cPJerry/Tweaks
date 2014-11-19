@@ -1,3 +1,13 @@
+// ==UserScript==
+// @name New Download Links
+// @version 1.0.0
+// @updateURL https://raw.githubusercontent.com/cPJerry/Tweaks/master/dl.user.js
+// @downloadURL https://raw.githubusercontent.com/cPJerry/Tweaks/master/dl.user.js
+// @match https://staff.whmcs.com/members/admin/supporttickets.php?action=viewticket&id=*
+// @match https://staff.whmcs.com/members/admin/supporttickets.php?action=view&id=*
+// ==/UserScript==
+
+
 function str_replace(search, replace, subject, count) {
   //  discuss at: http://phpjs.org/functions/str_replace/
   // original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
