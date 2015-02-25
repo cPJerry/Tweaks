@@ -2,7 +2,7 @@
 // @name        Imgur vote bar
 // @namespace   http://www.jaswin.net
 // @description Adds the vote bar back to imgur
-//
+// @updateurl https://raw.githubusercontent.com/cPJerry/Tweaks/master/imgur.user.js
 // @include 	*imgur.com/gallery/*
 //
 // @version     1.0
