@@ -5,7 +5,7 @@
 // @updateurl https://raw.githubusercontent.com/cPJerry/Tweaks/master/imgur.user.js
 // @include 	*imgur.com/gallery/*
 //
-// @version     1.0
+// @version     1.2
 // @require     http://code.jquery.com/jquery-1.11.0.min.js
 // @grant       None
 // 
